@@ -1,8 +1,18 @@
 <div class="container">
-  <h1><%= @task.title %></h1>
+<h1>Update Complete!</h1>
+  <h2><%= @task.title %></h2>
   <p><%= @task.details %></p>
-  <%= link_to 'index', tasks_path, class: 'btn btn-light' %>
-  <%= link_to task_path(@task), method: :delete, data: { confirm: "Remove #{@task.title}?" } do %>
-    <i class="fas fa-times"></i>
-  <% end %>
+        <% if @task.completed == true %>
+            <i class="far fa-check-square"></i>
+          <% else %>
+            <i class="far fa-square"></i>
+          <% end %>
+          <div>  <%= link_to task_path(@task), method: :delete, data: { confirm: "Remove #{@task.title}?" } do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+</div>
+<div>
+  <%= link_to 'back to tasks', tasks_path, class: 'btn btn-light' %>
+
+</div>
 </div>
