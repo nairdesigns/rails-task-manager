@@ -14,14 +14,14 @@ class TasksController < ApplicationController
   end
 
   def add
-    # @task = Task.new(task_params)
-    # if @task.save
-    #   redirect_to task_path(@task)
-    # else
-    #   # if the task doesn save, what should happen?
-    #   # show the form again, what page was the form on?
-    #   render 'new.html.erb'
-    # end
+    @task = Task.new(task_params)
+    if @task.save
+      redirect_to task_path(@task)
+    else
+      # if the task doesn save, what should happen?
+      # show the form again, what page was the form on?
+      render 'new.html.erb'
+    end
   end
 
   def edit
@@ -51,6 +51,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    # params.require(:task).permit(:name, :address, :rating)
+    # params.require(:task).permit(:name, :details, :completed)
   end
 end

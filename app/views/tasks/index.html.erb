@@ -1,9 +1,11 @@
 <h1>My Tasks</h1>
-<ul>
-<li></li>
-
-<li></li>
-<i class="far fa-square"></i>
-<i class="far fa-check-square"></i>
-
-</ul>
+<div class="tasks">
+    <% @tasks.each do |task| %>
+      <div class="task-product  ">
+          <h2><%= task.title %></h2>
+          <p><%= task.details %></p>
+        <!-- Take the id out of the instance and builds the path with it -->
+        <%= link_to '', task_path(task), class: "task-product-link"  %>
+      </div>
+    <% end %>
+  </div>
