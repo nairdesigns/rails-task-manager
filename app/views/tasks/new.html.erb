@@ -1,1 +1,11 @@
+<div class="container">
+
   <h1>Add Task</h1>
+  <% if @task.errors.any? %>
+    <% @task.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+  <%= render 'tasks/form' %>
+
+</div>
