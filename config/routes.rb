@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  # create
+  # add
   get '/tasks/new', to: 'tasks#new', as: :new_task
   # We need another route to send our form information to
-  post '/tasks', to: 'tasks#create', as: :tasks
+  post '/tasks', to: 'tasks#add', as: :tasks
 
   # read
   get '/tasks', to: 'tasks#index'
