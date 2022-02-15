@@ -8,7 +8,7 @@
           <p>no title</p>
 
         <% else %>
-          <h2><%= task.title %></h2>
+          <h2><%=  link_to task.title, edit_task_path(task), class: "task-link"  %></h2>
           <p><%= task.details %></p>
 
           <% if task.completed == true %>
@@ -17,9 +17,6 @@
             <i class="far fa-square"></i>
           <% end %>
 
-        <ul>
-          <li><%= link_to task.title, task_path(task), class: "task-link"  %></li>
-        </ul>
       </div>
         <% end %>
 
